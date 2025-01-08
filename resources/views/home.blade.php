@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
-{{-- @section('contents')
+@section('contents')
 <div class="p-6 bg-white rounded-lg shadow-md">
     <h1 class="text-2xl font-bold mb-4">Selamat Datang, {{ Auth::user()->name }}</h1>
 
@@ -30,4 +30,4 @@
     
     </div>
 </div>
-@endsection --}}
+@endsection

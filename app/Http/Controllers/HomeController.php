@@ -17,8 +17,11 @@ class HomeController extends Controller
 
     public function index()
     {
+        $jumlahproduct = Product::count();
+        $jumlahuser = User::count();
+        $totalAssets = Product::sum('price');
 
-        return view('home');
+        return view('home', compact('jumlahproduct', 'jumlahuser', 'totalAssets'));
     }
 
     public function adminHome()

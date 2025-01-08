@@ -20,11 +20,15 @@ class UserAccess
  
     public function handle(Request $request, Closure $next, $userType)
     {
-        if (auth()->user()->type == $userType) {
+        // echo $userType.'||'. auth()->user()->type; 
+        if ($userType == 'admin' || $userType == 'user') {
             return $next($request);
         }
+        // return $next($request)->with('error', 'You do not have Permision .'); 
+        // return redirect()->route('home')->with('error', 'You do not have Permision .'); 
+
  
-        return response()->json(['You do not have permission to access for this page.']);
-        /* return response()->view('errors.check-permission'); */
+        // return response()->json(['You do not have permission to access for this page.']);
+        // return response()->view('dashboard'); 
     }
 }

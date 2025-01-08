@@ -37,8 +37,10 @@ Route::controller(AuthController::class)->group(function () {
 Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/profile', [UserController::class, 'userprofile'])->name('profile');
-});
+    Route::get('/product', [ProductController::class, 'index'])->name('product');
 
+});
+Route::get('/search', [ProductController::class, 'search'])->name('search');
 // Admin Routes List
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin/home');
@@ -60,8 +62,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::put('/admin/products/edit/{id}', [ProductController::class, 'update'])->name('admin/products/update');
     Route::delete('/admin/products/destroy/{id}', [ProductController::class, 'destroy'])->name('admin/products/destroy');
     Route::get('/admin/products/cetakPdf', [ProductController::class, 'cetakPdf'])->name('cetak')->middleware('auth');
-
-    Route::get('/user/products', [ProductController::class, 'index'])->name('admin/products');
+    Route::get('/search', [ProductController::class, 'search'])->name('search');
+    Route::get('/admin/products', [ProductController::class, 'index'])->name('admin/products');
 
     // Profil Admin
     Route::get('/admin/profile', [AdminController::class, 'profilepage'])->name('admin/profile');

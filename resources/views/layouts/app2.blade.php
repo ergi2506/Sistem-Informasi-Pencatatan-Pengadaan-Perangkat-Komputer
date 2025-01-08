@@ -17,7 +17,7 @@
     <header class="px-4 py-2 shadow">
         <div class="flex justify-between">
             <div class="flex items-center">
-                <a class="navbar-brand" href="{{ route('admin/home') }}"><img
+                <a class="navbar-brand" href="{{ route('home') }}"><img
                         src="{{ asset('storage/products/Perumda Paljaya Logo.png') }}" width="290px"></a>
             </div>
 
@@ -39,7 +39,7 @@
                         class="text-sm text-left absolute top-0 right-0 mt-16 mr-4 bg-white rounded border border-gray-400 shadow"
                         x-show="open" @click.away="open = false">
                         <ul>
-                            <li class="px-4 py-3 border-b hover:bg-gray-200"><a href="{{ route('admin/profile') }}">My Profile</a></li>
+                            <li class="px-4 py-3 border-b hover:bg-gray-200"><a href="{{ route('profile') }}">My Profile</a></li>
                             <li class="px-4 py-3 hover:bg-gray-200"><a href="{{ route('logout') }}">Log out</a></li>
                         </ul>
                     </div>
@@ -59,14 +59,14 @@
                     </div>
                     <div class="my-2 bg-gray-600 h-[1px]"></div>
                 </div>
-                <a href="{{ route('admin/home') }}">
+                <a href="{{ route('home') }}">
                     <div
                         class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
                         <i class="bi bi-house-door-fill"></i>
                         <span class="text-[15px] ml-4 text-gray-200 font-bold">Home</span>
                     </div>
                 </a>
-                <a href="{{ route('admin/products') }}">
+                <a href="{{ route('product') }}">
                     <div
                         class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
                         <i class="bi bi-basket-fill"></i>
@@ -85,7 +85,7 @@
                     </div>
                 </a>
                 @endif
-                <a href="{{ route('admin/profile') }}">
+                <a href="{{ route('profile') }}">
                     <div
                         class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
                         <i class="bi bi-person-fill"></i>
